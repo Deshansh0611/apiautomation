@@ -9,7 +9,7 @@ public class ConfigManager {
     private static final Properties prop = new Properties();
 
     private ConfigManager() throws IOException {
-        InputStream inputStream = ConfigManager.class.getResourceAsStream("../resources/config.properties");
+        InputStream inputStream = ConfigManager.class.getResourceAsStream("/config.properties");
         prop.load(inputStream);
     }
 

@@ -4,13 +4,11 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 public class AuthenticationUtil {
     public static String userId;
 
-    public static void main(String[] args) {
+    public static void authentication(String[] args) {
         RestAssured.baseURI = "https://bookstore.toolsqa.com";
         RequestSpecification request = RestAssured.given();
         JSONObject params = new JSONObject();
