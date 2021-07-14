@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "companyId"
 })
 @Generated("jsonschema2pojo")
-public class Users {
+public class User {
 
     @JsonProperty("id")
     private Integer id;

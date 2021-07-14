@@ -1,6 +1,6 @@
 package demos;
 
-import dto.Users;
+import dto.User;
 import helpers.UsersServiceHelper;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,8 +19,9 @@ public class TestGetUsers {
 
     @Test
     public void testGetAllUsers() {
-        List<Users> userList = usersServiceHelper.getAllUsers();
+        List<User> userList = usersServiceHelper.getAllUsers();
         assertNotNull(userList, "Users list is not null!");
         assertNotNull(userList.isEmpty(), "Users list is not empty!");
+
     }
 }
