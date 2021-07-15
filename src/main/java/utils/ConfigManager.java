@@ -26,7 +26,7 @@ public class ConfigManager {
         return manager;
     }
 
-    public String getString(String key){
+    public String getString(String key) {
         return System.getProperty(key, prop.getProperty(key));
     }
 }

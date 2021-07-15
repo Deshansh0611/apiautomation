@@ -52,4 +52,34 @@ public class UsersServiceHelper {
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_CREATED);
         return response;
     }
+
+    public Response patchUser(Integer id) {
+        User user = new User();
+        user.setId(1);
+        user.setEmail("kurt.cobain@gmail.com");
+        user.setCompanyId("Postman");
+        user.setFirstName("Kurt");
+        user.setLastName("Cobain");
+        user.setAge(27);
+        Response response = RestAssured.given()
+                .when()
+                .contentType(ContentType.JSON)
+                .body(user)
+                .pathParam("id", id)
+                .patch(Endpoints.UPDATE_USER)
+                .andReturn();
+        Assert.assertTrue(response.getStatusCode() == HttpStatus.SC_OK);
+        return response;
+    }
+
+    public Response deleteUser(Integer id) {
+        Response response = RestAssured.given()
+                .pathParam("id", id)
+                .log().all()
+                .contentType(ContentType.JSON)
+                .delete(Endpoints.DELETE_USER)
+                .andReturn();
+        Assert.assertTrue(response.getStatusCode() == HttpStatus.SC_OK);
+        return response;
+    }
 }
